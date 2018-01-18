@@ -18,7 +18,7 @@ timezone:          Asia/Shanghai
 markdown:          kramdown
 highlighter:       rouge
 excerpt_separator: <!--more-->
-permalink:         /:title.html
+permalink:         /:title.php
 
 kramdown:
   auto_ids: true
