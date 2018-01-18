@@ -3,7 +3,7 @@
 # Site wide configuration
 ####################################
 #
-title: 文章分享
+title: todaro's blog
 email: root@itodaro.pw
 description: itodaro's blog,powered by jekyll.
 #url: https://zjiajun.github.io # the base hostname & protocol for your site
@@ -39,7 +39,7 @@ owner:
   bio: "挖一些洞，做一些分析，分享一些知识"
   email: root@itodaro.pw
   disqus-shortname: #username
-  twitter:  #username
+  twitter:  tod4ro
   facebook: #username
   google:
     plus: #username
@@ -61,7 +61,7 @@ owner:
   dribbble: #username
   youtube: #username
   soundcloud: #username
-  weibo: #username
+  weibo: todaro
   flickr: #username
   codepen: #username
   telegram: #username
