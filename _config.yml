@@ -3,11 +3,11 @@
 # Site wide configuration
 ####################################
 #
-title: zhujiajun
-email: zhujiajun.me@gmail.com
-description: zhujiajun's blog,powered by jekyll.
-url: https://zjiajun.github.io # the base hostname & protocol for your site
-keywords: ["Programming", "Java", "Scala","Blog"]
+title: 文章分享
+email: root@itodaro.pw
+description: itodaro's blog,powered by jekyll.
+#url: https://zjiajun.github.io # the base hostname & protocol for your site
+keywords: ["赏金", "代码审计", "渗透","博客"]
 
 #
 ###################################
@@ -33,11 +33,11 @@ kramdown:
 ####################################
 #
 owner:
-  name: zhujiajun
+  name: todaro
   avatar: avatar.jpg
-  job: "Java & Scala Developer"
-  bio: "A backend developer who loves design awesome things. Working for Dianping at in Shanghai, China."
-  email: zhujiajun.me@gmail.com
+  #job: "Java & Scala Developer"
+  bio: "挖一些洞，做一些分析，分享一些知识"
+  email: root@itodaro.pw
   disqus-shortname: #username
   twitter:  #username
   facebook: #username
@@ -48,7 +48,7 @@ owner:
     ad-client:
     ad-slot:
   bing-verify:
-  github: zjiajun #username
+  #github: zjiajun #username
   stackoverflow: #123456/username   from a "http://stackoverflow.com/users/123456/username" link
   linkedin: #username
   xing: #username
