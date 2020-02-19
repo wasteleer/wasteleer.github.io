@@ -296,6 +296,7 @@ function getValue(obj,key){
     }
 })();
 RainbowBridge.callMethod('JSCommondMethod', 'getToken', {}, function(msg) {
+	alert(556677);
             if (msg.status.code == 0) {
 			alert(JSON.stringify(msg.data));
                 if (msg.data.token) {
