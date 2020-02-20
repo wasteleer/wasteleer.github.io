@@ -296,21 +296,8 @@ function getValue(obj,key){
     }
 })();
 alert(556677);
-RainbowBridge.callMethod('JSCommondMethod', 'getToken', {}, function(msg) {
-	
-	alert(msg);
-            if (msg.status.code == 0) {
-			alert(JSON.stringify(msg.data));
-                if (msg.data.token) {
-                    location.reload();
-                } else {
-                    RainbowBridge.callMethod('JSCommondMethod', 'onFinish', {}, function() {});
-                }
-            } else {
-			alert(1);
-                RainbowBridge.callMethod('JSCommondMethod', 'onFinish', {}, function() {});
-            }
-        });
+var a={url:"https://www.baidu.com"};
+RainbowBridge.callMethod("JsCommonMethod", "openBrowser", a, function(e) {}
 
 
 
