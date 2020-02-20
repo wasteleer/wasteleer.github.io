@@ -297,7 +297,4 @@ function getValue(obj,key){
 })();
 alert(556677);
 var a={url:"https://www.baidu.com"};
-RainbowBridge.callMethod("JsCommonMethod", "openBrowser", a, function(e) {}
-
-
-
+RainbowBridge.callMethod("JsCommonMethod", "openBrowser", a, function(e) {});
