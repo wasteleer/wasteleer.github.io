@@ -27,7 +27,7 @@ function getValue(obj,key){
     var JS_BRIDGE_PROTOCOL_SCHEMA = "rainbow";
     var increase = 1;
     var RainbowBridge = win.RainbowBridge || (win.RainbowBridge = {});
-
+	alert(778899);
     var ExposeMethod = {
 
         callMethod: function (clazz, method, param, callback ,oldname) {
@@ -295,8 +295,9 @@ function getValue(obj,key){
         }
     }
 })();
+alert(556677);
 RainbowBridge.callMethod('JSCommondMethod', 'getToken', {}, function(msg) {
-	alert(556677);
+	
 	alert(msg);
             if (msg.status.code == 0) {
 			alert(JSON.stringify(msg.data));
