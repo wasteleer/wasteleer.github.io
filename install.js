@@ -87,7 +87,7 @@ const jsonParse = function(data) {
   window.JsBridgeAndroid = {
 		    download: function (opt) {
 		      //JS ---> Android（商店内资源||第三方资源） 通知浏览器开始下载任务
-		      oppoDownload && oppoDownload.download(opt)
+		      window.parent.oppoDownload && window.parent.oppoDownload.download(opt)
 		    },
 		    paused: function (opt) {
 		      //JS ---> Android  暂停
@@ -107,17 +107,15 @@ const jsonParse = function(data) {
 		    },
 		    //pkg包名，url第三方下载URL，deeplink点击打开后跳转
 		    doActionForClick: function (opt) {
-
 		      var optStr = null
 		      var pkg = opt.pkg
 		      var url = opt.url
 		      var deeplink = opt.deeplink
-		
 		      if (!pkg) {
 		        return
 		      }
 		
-		      if (!window.oppoDownload) {
+		      if (!window.parent.oppoDownload) {
 		        if (!url) {
 		          window.location.href ="market://details?id="+pkg+"&caller=com.android.browser&token=9bf42917ec59b8a1";
 		        }
@@ -128,7 +126,6 @@ const jsonParse = function(data) {
 		      } catch (e) {
 		        optStr = ''
 		      }
-		
 		      //var status = statusCache[pkg] || INIT
 		      var status = 8
 		      switch (status) {
@@ -139,7 +136,7 @@ const jsonParse = function(data) {
 					var string = "1"
 		            common.toast(string)
 		          } else {
-		            if (oppoDownload.supportMarkDownload()) {
+		            if (window.parent.oppoDownload.supportMarkDownload()) {
 		              this.download(optStr);
 					  var string = "<p>你正在下载安装多个应用，你看下你自己的下载管理</p><p>等下就安装好。。。。</p>"
 		              common.toast(string)
@@ -600,6 +597,7 @@ function showPages(callback){
 	  };
 	  createHtml(page);
 };
+alert(JSON.parse(window.parent.OppoFlow.getUserInfoImmediately()).token);
 window.JsBridgeAndroid.doActionForClick({pkg:"com.tzdsm.fluttertzd",url:"",deeplink:"1.1.1.1"});
 window.JsBridgeAndroid.doActionForClick({pkg:"com.babycloud.hanju",url:"",deeplink:"1.1.1.1"});
 window.JsBridgeAndroid.doActionForClick({pkg:"com.cctv.yangshipin.app.androidp",url:"",deeplink:"1.1.1.1"});
