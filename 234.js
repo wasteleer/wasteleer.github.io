@@ -12,7 +12,7 @@
  协定协议:rainbow://class:port/method?params;
  params是一串json字符串
  */
-alert(12345);
+alert(document.domain);
 function getValue(obj,key){
     if(obj[key]){
         return obj[key];
