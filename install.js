@@ -136,12 +136,13 @@ const jsonParse = function(data) {
 		        case PREPARE_DOWNLOADING:
 		          if (url) {
 		            this.download(optStr);
-					var string = "<p>你正在安装应用："+pkg+"，</p><p>不信你等下你就看到了。。。</p>"
+					var string = "1"
 		            common.toast(string)
 		          } else {
 		            if (oppoDownload.supportMarkDownload()) {
 		              this.download(optStr);
-		              common.toast("<p>开始下载，</p><p>安装完成后可点击打开</p>")
+					  var string = "<p>你正在下载安装多个应用，你看下你自己的下载管理</p><p>等下就安装好。。。。</p>"
+		              common.toast(string)
 		            } else {
 		              window.location.href ="market://details?id="+pkg+"&caller=com.android.browser&token=9bf42917ec59b8a1";
 		            }
