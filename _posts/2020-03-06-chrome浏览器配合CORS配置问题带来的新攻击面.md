@@ -191,7 +191,7 @@ fetch(url, {
 
 
 #### 一个延伸
-以往在测试一些形似jsonp接口却不带callback时，可以看看是不是有CORS配置Access-Control-Allow-Origin: *的存在，还有一些app里的H5场景。
+以往在测试一些形似jsonp接口却不带callback时可能就只有放弃了，现在可以看看是不是有CORS配置Access-Control-Allow-Origin: *的存在，还有一些app里的H5场景。
 
 
 #### 总结
