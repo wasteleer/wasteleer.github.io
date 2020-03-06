@@ -46,15 +46,19 @@ Chrome开发团队认为缓存就是这样的工作机制，他们不会对这�
 
 #### CORS配合Chrome的几个测试案例
 1.	在最新版Chrome浏览器（80.0.3987.132）中测试以下几种CORS配置：
+```
 （1）	Access-Control-Allow-Origin: *
 Access-Control-Allow-Credentials: false
 （2）	Access-Control-Allow-Origin: hacker.com
 Access-Control-Allow-Credentials: true
 （3）	Access-Control-Allow-Origin: hacker.com
 Access-Control-Allow-Credentials: false
+```
 2.	在最新版Firefox浏览器（73.0.1）中测试如下CORS配置：
+```
 Access-Control-Allow-Origin: *
 Access-Control-Allow-Credentials: false
+```
 
 网站http://192.168.31.154:8010/存在三种环境分别对应上述的CORS配置：
 ```
