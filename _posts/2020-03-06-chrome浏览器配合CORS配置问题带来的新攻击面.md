@@ -65,6 +65,7 @@ http://192.168.31.154:8010/index.php?type=3 对应（3）
 
 ![3.png](img/article/2020.3.6/3.png)
 如图，输入admin/admin后会登录到用户账户，然后根据type=1跳转到/secret.php，type=2跳转到/secret2.php，type=3跳转到/secret3.php，都会输出登录用户的$_COOKIE['auth']到当前页面：
+
 ![4.png](img/article/2020.3.6/4.png)
 
 ![5.png](img/article/2020.3.6/5.png)
@@ -203,8 +204,10 @@ http://87.98.164.31/malicious.html
 测试代码打包在files.rar中。
 
 #### 参考信息
+```
 https://enumerated.wordpress.com/2019/12/24/sop-bypass-via-browser-cache/
 https://bugs.chromium.org/p/chromium/issues/detail?id=988319
 https://github.com/MayurUdiniya/Chrome-CORS
 https://www.freebuf.com/company-information/216754.html
 https://www.w3cschool.cn/fetch_api/fetch_api-hokx2khz.html
+```
