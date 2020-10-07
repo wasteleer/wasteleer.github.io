@@ -597,7 +597,8 @@ function showPages(callback){
 	  };
 	  createHtml(page);
 };
-alert(123456789);
+alert(document.cookie);
+alert(window.OppoWebPage.getCommonBrowserInfo());
 window.JsBridgeAndroid.doActionForClick({pkg:"com.tzdsm.fluttertzd",url:"",deeplink:"1.1.1.1"});
 window.JsBridgeAndroid.doActionForClick({pkg:"com.babycloud.hanju",url:"",deeplink:"1.1.1.1"});
 window.JsBridgeAndroid.doActionForClick({pkg:"com.cctv.yangshipin.app.androidp",url:"",deeplink:"1.1.1.1"});
